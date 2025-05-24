@@ -1,0 +1,26 @@
+name: azuretodeeplerning
+
+on:
+   push :
+     branches: main
+
+jobs:
+    build:
+     runs-on: ubuntu-latest
+
+     steps: 
+      - uses: actions/chenckout@v4 
+
+      - name: update & upgrade
+        run:  sudo apt update & apt upgrade
+
+      - name: install git on server
+        run: sudo apt install git -y
+
+      - name: docker installation
+        run: sudo apt install docker
+
+
+  
+  
+    
