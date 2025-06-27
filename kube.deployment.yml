@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: regression-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: regression-app
+  template:
+    metadata:
+      labels:
+        app: regression-app
+    spec:
+      containers:
+      - name: regression-app
+        image: my-regression-app
+        ports:
+        - containerPort: 5000  # Or whatever your app uses
